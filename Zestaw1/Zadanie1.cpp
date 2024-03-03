@@ -3,7 +3,7 @@
 //    Jan Kwinta          03.03.2024    //
 //                                      //
 //    Obiektowy C++                     //
-//    Zestaw 1, zadania 1, 2            //
+//    Zestaw 1, zadanie 1               //
 //                                      //
 //######################################//
 
