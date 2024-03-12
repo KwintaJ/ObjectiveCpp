@@ -16,8 +16,11 @@ T accumulate(Iter left, Iter right, T init)
 {
     T sum = init;
 
-    for( ; left != right; left++) 
+    while(left != right)
+    {
         sum += *left;
+        left++;
+    }
 
     return sum;
 }
