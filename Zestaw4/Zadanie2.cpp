@@ -18,7 +18,7 @@ struct sum_traits<char>
     typedef int sum_type;
     static sum_type zero()
     {
-        return (char)0;
+        return 0;
     }
 };
 template<>
