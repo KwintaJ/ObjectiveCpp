@@ -15,22 +15,38 @@ struct sum_traits;
 template<>
 struct sum_traits<char>
 {
-    typedef int sum_type; 
+    typedef int sum_type;
+    static sum_type zero()
+    {
+        return (char)0;
+    }
 };
 template<>
 struct sum_traits<int>
 {
-    typedef long int sum_type; 
+    typedef long int sum_type;
+    static sum_type zero()
+    {
+        return 0;
+    }
 };
 template<>
 struct sum_traits<float>
 {
-    typedef double sum_type; 
+    typedef double sum_type;
+    static sum_type zero()
+    {
+        return 0.0;
+    }
 };
 template<>
 struct sum_traits<double>
 {
-    typedef double sum_type; 
+    typedef double sum_type;
+    static sum_type zero()
+    {
+        return 0.0;
+    }
 };
 
 template<typename T> 
