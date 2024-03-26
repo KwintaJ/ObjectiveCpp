@@ -8,6 +8,7 @@
 //######################################//
 
 #include <iostream>
+#include <vector>
 
 template<typename T>
 struct sum_traits;
@@ -48,19 +49,11 @@ struct sum_traits<double>
         return 0.0;
     }
 };
-struct char_sum
-{
-    typedef char sum_type;
-    static sum_type zero()
-    {
-        return (char)0;
-    }
-};
 
 template <typename Iter>
 typename sum_traits<typename std::iterator_traits<Iter>::value_type>::sum_type sum(Iter begin, Iter end) 
 {
-    typedef typename iterator_traits<Iter>::value_type value_type;
+    typedef typename std::iterator_traits<Iter>::value_type value_type;
     typedef typename sum_traits<value_type>::sum_type sum_type;
     sum_type total = sum_traits<value_type>::zero(); 
     for(auto it = begin; it != end; ++it)
@@ -69,12 +62,6 @@ typename sum_traits<typename std::iterator_traits<Iter>::value_type>::sum_type s
     }
     return total; 
 };
-
-template<typename T> 
-typename sum_traits<T>::sum_type sum(T *beg, T *end)
-{ 
-    return sum<sum_traits<T>, T>(beg, end);
-}
 
 int main(int argc, char **argv)
 {
