@@ -37,7 +37,7 @@ template<typename T>
 typename sum_traits<T>::sum_type sum(T *beg,T *end)
 {
     typedef typename sum_traits<T>::sum_type sum_type;
-    sum_type total = sum_traits::zero(); 
+    sum_type total = sum_traits<T>::zero(); 
     while(beg != end)
     { 
         total += *beg;
