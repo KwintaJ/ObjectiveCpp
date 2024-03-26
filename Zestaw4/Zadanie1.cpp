@@ -7,6 +7,8 @@
 //                                      //
 //######################################//
 
+#include <iostream>
+
 template<typename T>
 struct sum_traits;
 
@@ -38,12 +40,11 @@ typename sum_traits<T>::sum_type sum(T *beg,T *end)
     sum_type total = sum_type(); 
     while(beg != end)
     { 
-        total += *beg; beg++; 
+        total += *beg;
+        beg++; 
     }
     return total; 
 }
-
-#include <iostream>
 
 int main(int argc, char **argv)
 {
@@ -51,7 +52,7 @@ int main(int argc, char **argv)
     std::cin.tie(NULL); std::cout.tie(NULL);
 
     int ints[] = {1, 2, 3, 4, 5};
-    std::cout << "Suma int: " << sum(ints, arr + 5) << std::endl;
+    std::cout << "Suma int: " << sum(ints, ints + 5) << std::endl;
 
     char chars[] = {'a', 'b', 'c'};
     std::cout << "Suma char: " << sum(chars, chars + 3) << std::endl;
