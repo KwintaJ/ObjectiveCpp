@@ -7,6 +7,30 @@
 //                                      //
 //######################################//
 
+template<typename T>
+struct sum_traits;
+
+template<>
+struct sum_traits<char>
+{
+    typedef int sum_type; 
+};
+template<>
+struct sum_traits<int>
+{
+    typedef long int sum_type; 
+};
+template<>
+struct sum_traits<float>
+{
+    typedef double sum_type; 
+};
+template<>
+struct sum_traits<double>
+{
+    typedef double sum_type; 
+};
+
 #include <iostream>
 
 int main(int argc, char **argv)
