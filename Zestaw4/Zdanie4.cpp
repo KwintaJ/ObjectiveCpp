@@ -92,4 +92,7 @@ int main(int argc, char **argv)
 
     double doubles[] = {1.1, 2.2, 3.3};
     std::cout << "Suma double: " << sum(doubles, doubles + 3) << std::endl;
+
+    std::vector<int> v(5, 5);
+    std::cout << "Suma int w std::vector: " << sum(v.begin(), v.end()) << std::endl;
 }
