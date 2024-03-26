@@ -31,10 +31,34 @@ struct sum_traits<double>
     typedef double sum_type; 
 };
 
+template<typename T> 
+typename sum_traits<T>::sum_type sum(T *beg,T *end)
+{
+    typedef typename sum_traits<T>::sum_type sum_type;
+    sum_type total = sum_type(); 
+    while(beg != end)
+    { 
+        total += *beg; beg++; 
+    }
+    return total; 
+}
+
 #include <iostream>
 
 int main(int argc, char **argv)
 {
     std::ios_base::sync_with_stdio(false);
     std::cin.tie(NULL); std::cout.tie(NULL);
+
+    int ints[] = {1, 2, 3, 4, 5};
+    std::cout << "Suma int: " << sum(ints, arr + 5) << std::endl;
+
+    char chars[] = {'a', 'b', 'c'};
+    std::cout << "Suma char: " << sum(chars, chars + 3) << std::endl;
+
+    float floats[] = {1.1, 2.2, 3.3};
+    std::cout << "Suma float: " << sum(floats, floats + 3) << std::endl;
+
+    double doubles[] = {1.1, 2.2, 3.3};
+    std::cout << "Suma double: " << sum(doubles, doubles + 3) << std::endl;
 }
