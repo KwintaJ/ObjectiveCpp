@@ -73,7 +73,6 @@ int main(int argc, char **argv)
 
     char chars[] = {'a', 'b', 'c'};
     std::cout << "Suma char1: " << sum(chars, chars + 3) << std::endl;
-    std::cout << "Suma char2: " << sum<char_sum>(chars, chars + 3) << std::endl;
 
     float floats[] = {1.1, 2.2, 3.3};
     std::cout << "Suma float: " << sum(floats, floats + 3) << std::endl;
