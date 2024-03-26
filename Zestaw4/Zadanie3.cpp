@@ -58,11 +58,11 @@ struct char_sum
 };
 
 template<typename Traits, typename T>
-typename Traits::sum_type sum(T *beg, .T *end)
+typename Traits::sum_type sum(T *beg, T *end)
 {
     typedef typename Traits::sum_type sum_type;
     sum_type total = sum_type::zero(); 
-    while(beg != end )
+    while(beg != end)
     { 
         total += *beg;
         beg++; 
