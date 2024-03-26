@@ -61,7 +61,7 @@ template<typename Traits, typename T>
 typename Traits::sum_type sum(T *beg, T *end)
 {
     typedef typename Traits::sum_type sum_type;
-    sum_type total = sum_type::zero(); 
+    sum_type total = Traits::zero(); 
     while(beg != end)
     { 
         total += *beg;
