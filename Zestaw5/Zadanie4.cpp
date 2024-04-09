@@ -42,7 +42,7 @@ int main(int argc, char **argv)
     std::ios_base::sync_with_stdio(false);
     std::cin.tie(NULL); std::cout.tie(NULL);
 
-    Strip<const int> a;
+    Strip<const int&> a;
 
 
 }
