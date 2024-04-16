@@ -18,6 +18,31 @@ public:
     static void check_top(size_t) {}
 };
 
+// Klasa wytycznych dla przerywania działania
+class Abort_on_error_policy {
+public:
+    static void check_push(size_t top, size_t N) {
+        if (top >= N) {
+            std::cerr << "Stack overflow! Aborting." << std::endl;
+            std::abort();
+        }
+    }
+
+    static void check_pop(size_t top) {
+        if (top == 0) {
+            std::cerr << "Stack underflow! Aborting." << std::endl;
+            std::abort();
+        }
+    }
+
+    static void check_top(size_t top) {
+        if (top == 0) {
+            std::cerr << "Stack is empty! Aborting." << std::endl;
+            std::abort();
+        }
+    }
+};
+
 // Szablon ze statyczną tablicą w pamięci
 template<typename T, size_t N = 0>
 struct Static_table_allocator {
@@ -79,7 +104,8 @@ public:
 
 int main() {
     // Testowanie stosu z domyślnym alokatorem (Static_table_allocator)
-    Stack<int, 5> stack_static;
+    Stack<int, 5, Abort_on_error_policy> stack_static;
+    
 
     // Testowanie stosu z dynamicznym alokatorem (Dynamic_table_allocator)
     Stack<int, 0, No_checking_policy, Dynamic_table_allocator> stack_dynamic;
