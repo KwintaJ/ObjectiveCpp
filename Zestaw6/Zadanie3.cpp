@@ -56,7 +56,7 @@ struct Static_table_allocator {
 };
 
 // Przykład klasy Dynamic_table_allocator
-template<typename T>
+template<typename T, size_t N = 0>
 struct Dynamic_table_allocator {
     typedef T* rep_type;
 
