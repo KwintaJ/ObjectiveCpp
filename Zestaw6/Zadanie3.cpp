@@ -103,12 +103,21 @@ public:
 };
 
 int main() {
-    // Testowanie stosu z domyślnym alokatorem (Static_table_allocator)
+    // Stos statyczny 5-elementowy
     Stack<int, 5, Abort_on_error_policy> stack_static;
-    
 
-    // Testowanie stosu z dynamicznym alokatorem (Dynamic_table_allocator)
+    // Stos dynamiczny
     Stack<int, 0, No_checking_policy, Dynamic_table_allocator> stack_dynamic;
+
+    stack_dynamic.push(1);
+    stack_dynamic.push(2);
+
+    stack_static.push(1);
+    stack_static.push(1);
+    stack_static.push(1);
+    stack_static.push(1);
+    stack_static.push(1);
+    stack_static.push(1);
 
     return 0;
 }
