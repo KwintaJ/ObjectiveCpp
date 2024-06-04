@@ -10,3 +10,7 @@ Programy napisane w ramach ćwiczeń kursu *Obiektowy C++* prowadzonych w semest
 **Zestaw5:** Funkcje typów  
 **Zestaw6:** Klasy wytycznych  
 **Zestaw7:** Metaprogramowanie  
+**Zestaw8:** Szablony wyrażeń  
+**Zestaw9:** Wskaźniki inteligentne  
+**Zestaw11:** Koncepty  
+**Zestaw12:** Wzorce projektowe: singleton, obserwator, dekorator, adapter, odwiedzający  
